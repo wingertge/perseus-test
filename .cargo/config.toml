@@ -1,0 +1,4 @@
+[build]
+rustflags = [
+    "--remap-path-prefix=C:\\Users\\winge\\.cargo=cargo"
+]

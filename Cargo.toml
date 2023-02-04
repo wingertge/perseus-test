@@ -1,0 +1,48 @@
+[package]
+name = "perseus-test"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# Dependencies for the engine and the browser go here
+[dependencies]
+perseus = { version = "0.4.0-beta.17", features = [ "hydrate" ] }
+sycamore = { version = "^0.8.1", features = ["suspense"] }
+serde = { version = "1", features = [ "derive" ] }
+serde_json = "1"
+perseus-tailwind = { path = "../perseus-tailwind" }
+perseus-compress = { path = "../perseus-compress", features = ["brotli"] }
+# wrpc = { git = "https://github.com/wingertge/wrpc.git" }
+wrpc = { path = "../wrpc" }
+futures = "0.3"
+reqwasm = "0.5"
+sycamore-query = { path = "../sycamore-query" }
+log = "0.4"
+
+# Engine-only dependencies go here 
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+tokio = { version = "1", features = [ "macros", "rt", "rt-multi-thread" ] }
+perseus-axum = "0.4.0-beta.17"
+axum = "0.6"
+reqwest = "0.11"
+fmterr = "0.1"
+urlencoding = "2"
+closure = "0.3"
+tower = "0.4"
+tower-http = { version = "0.3", features = ["fs"] }
+
+# Browser-only dependencies go here
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wee_alloc = "0.4"
+wasm-logger = "0.2"
+
+[profile.release]
+# Do not perform backtrace for panic on release builds.
+panic = 'abort'
+# Perform optimizations on all codegen units.
+codegen-units = 1
+# Optimize for size.
+opt-level = 's' # or 'z' to optimize "aggressively" for size
+# Enable link time optimization.
+lto = true

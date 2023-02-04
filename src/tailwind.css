@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .shadow-outline {
+        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+    }
+}
+
+.text-field {
+    @apply shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight
+}
+.text-field:focus {
+    @apply outline-none shadow-outline
+}

@@ -1,0 +1,6 @@
+version = "0.3.2"
+
+[scripts]
+deploy-abort = "perseus deploy --cargo-browser-args=\"-Z build-std=std,panic_abort -Z build-std-features=panic_immediate_abort\""
+clippy = "cargo clippy -- -D clippy::expect_used -D clippy::unwrap_used"
+clippy-wasm = "cargo clippy --target wasm32-unknown-unknown -- -D clippy::expect_used -D clippy::unwrap_used"
