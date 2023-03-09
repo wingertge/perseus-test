@@ -1082,9 +1082,9 @@ checksum = "478c572c3d73181ff3c2539045f6eb99e5491218eae919370993b890cdbdd98e"
 
 [[package]]
 name = "perseus"
-version = "0.4.0-beta.17"
+version = "0.4.0-beta.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2817b16ea5b6f96e823dcbbee06373dafdbe69822a1449fe3085456845e11c89"
+checksum = "a8264d79804270cb02cc066ef99a9f91431430c35d52dd2396e5ae4efad246ec"
 dependencies = [
  "async-trait",
  "chrono",
@@ -1113,9 +1113,9 @@ dependencies = [
 
 [[package]]
 name = "perseus-axum"
-version = "0.4.0-beta.17"
+version = "0.4.0-beta.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c95ef7b65023a10e53ebd6b13c0e7dac4b274ec710605a2925c6f3de65b6f5b1"
+checksum = "584a80e74289626f89a0defb3a213f5ee44b5d6dc20bf345624be057a91edaa3"
 dependencies = [
  "axum",
  "perseus",
@@ -1133,9 +1133,9 @@ dependencies = [
 
 [[package]]
 name = "perseus-macro"
-version = "0.4.0-beta.17"
+version = "0.4.0-beta.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "72555f3c41e9ff2509c9c1ea0dddc405654ba16ac5cf720af28c14a5c65afc55"
+checksum = "123926add1ab760bdca84e0cd853c030361cd3b7654b680662a49f2c161c36c1"
 dependencies = [
  "darling",
  "proc-macro2",
@@ -1145,11 +1145,12 @@ dependencies = [
 
 [[package]]
 name = "perseus-tailwind"
-version = "0.4.2"
+version = "0.4.6"
 dependencies = [
  "log",
  "perseus",
  "reqwest",
+ "tokio",
 ]
 
 [[package]]
@@ -1325,11 +1326,10 @@ dependencies = [
 
 [[package]]
 name = "rexie"
-version = "0.2.1"
+version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5ed2b22c65c32a8bd7cc1517fe02a8240839cba64e4cba7787e758f70f011b25"
+checksum = "fef172ff9cdf146cdc934e28cdeb137517bf954fb75e6ee8987dd44b58f351b1"
 dependencies = [
- "console_error_panic_hook",
  "js-sys",
  "num-traits",
  "thiserror",

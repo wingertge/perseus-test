@@ -29,7 +29,7 @@ pub fn main<G: Html>() -> PerseusApp<G> {
                     head {
                         meta(charset = "UTF-8")
                         meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
-                        link(rel = "stylesheet", href = "/static/tailwind.css")
+                        link(rel = "stylesheet", href = "/tailwind.css")
                     }
                     body {
                         PerseusRoot()
@@ -43,7 +43,7 @@ pub fn main<G: Html>() -> PerseusApp<G> {
                     perseus_tailwind::get_tailwind_plugin,
                     perseus_tailwind::TailwindOptions {
                         in_file: "src/tailwind.css".into(),
-                        out_file: "dist/static/tailwind.css".into(),
+                        out_file: "dist/tailwind.css".into(),
                     },
                 )
                 .plugin(
@@ -54,7 +54,7 @@ pub fn main<G: Html>() -> PerseusApp<G> {
                     },
                 ),
         )
-        .static_alias("/static/tailwind.css", "dist/static/tailwind.css")
+        .static_alias("/tailwind.css", "dist/tailwind.css")
 }
 
 #[cfg(not(target_arch = "wasm32"))]
